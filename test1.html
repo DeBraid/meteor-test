@@ -1,0 +1,31 @@
+<head>
+  <title>test1</title>
+</head>
+
+<body>
+  <h1>My Fav color Copy!</h1>
+
+  {{> color_list}}
+</body>
+
+
+<template name="color_list">
+  {{#each colors }}
+  <ul>
+    {{> color_info }}
+  </ul>
+  {{ else }}
+    No colors yet.
+  {{/each}}
+
+  <div class="footer">
+    <button>Like!</button>
+  </div>
+</template>
+  
+
+<template name="color_info">
+  <li class="{{maybe_selected}}">
+    {{ how_many }} people {{likes}} people like {{name}}
+  </li>
+</template>
